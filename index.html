@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/assets/script.js" defer></script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Password Generator</h1>
+        <h3 class="password-display">Password</h3>
+        <form id="passwordGeneratorForm" class="form">
+            <!-- creating a slider with a min and max range then assigning it itself as an id tag so that when we click on it we target its value -->
+            <label for="characterAmountNumber">Number of characters</label>
+                <div class="character-amount-container">    
+                    <input type="range" min="8" max="128" value="10" id="characterAmountRange">
+                    <input type="number" min="8" max="128" value="10" id="characterAmountNumber"> 
+                </div>
+            <!-- create check boxes for our boolean values -->
+
+            <label for="inludeUppercase">Include Uppercase</label>
+            <input type="checkbox" id="inludeUppercase" >
+            
+            <label for="inludeNumbers">Include Numbers</label>
+            <input type="checkbox" id="inludeNumbers">
+
+            <label for="inludeSymbols">Include Symbols</label>
+            <input type="checkbox" id="inludeSymbols">
+
+            <!-- create a button so the user can initialize a password -->
+
+            <button type="submit" class="btn">Generate Password</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>
