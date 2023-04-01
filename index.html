@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1 class="title">Password Generator</h1>
-        <h3 class="password-display">Password</h3>
+        <h3 class="password-display" id="passwordDisplay">Password</h3>
         <form id="passwordGeneratorForm" class="form">
             <!-- creating a slider with a min and max range then assigning it itself as an id tag so that when we click on it we target its value -->
             <label for="characterAmountNumber">Number of characters</label>
@@ -21,14 +21,14 @@
                 </div>
             <!-- create check boxes for our boolean values -->
 
-            <label for="inludeUppercase">Include Uppercase</label>
-            <input type="checkbox" id="inludeUppercase" >
+            <label for="includeUppercase">Include Uppercase</label>
+            <input type="checkbox" id="includeUppercase" >
             
-            <label for="inludeNumbers">Include Numbers</label>
-            <input type="checkbox" id="inludeNumbers">
+            <label for="includeNumbers">Include Numbers</label>
+            <input type="checkbox" id="includeNumbers">
 
-            <label for="inludeSymbols">Include Symbols</label>
-            <input type="checkbox" id="inludeSymbols">
+            <label for="includeSymbols">Include Symbols</label>
+            <input type="checkbox" id="includeSymbols">
 
             <!-- create a button so the user can initialize a password -->
 

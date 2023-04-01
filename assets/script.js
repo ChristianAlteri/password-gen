@@ -6,10 +6,11 @@ const includeUppercaseElement = document.getElementById("includeUppercase")
 const includeSymbolsElement = document.getElementById("includeSymbols")
 const includeNumbersElement = document.getElementById("includeNumbers")
 const form = document.getElementById("passwordGeneratorForm")
+const passwordDisplay = document.getElementById("passwordDisplay")
 
 // here we used the ASCII codes as our letter range
-const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97,122)
-const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65,90)
+const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(97,122)
+const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(65,90)
 const NUMBER_CHAR_CODES = arrayFromLowToHigh(48,57)
 const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33,47)
 
@@ -27,13 +28,30 @@ form.addEventListener("submit", e => {
     const includeNumbers = includeNumbersElement.checked
     // after taking the user input and assigning them to variables we parse them all into a function called generatePassword
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
+    // sets the password display to the display of the newly generated password
+    passwordDisplay.innerText = password
 })
 
 // create the generatePassword function
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
-    // get from ASCII codes "A"
-    // String.fromCharCode(65)
-    console.log(characterAmount);
+    // initialise a string then concat onto it looping through all the variables
+    let charCodes = LOWERCASE_CHAR_CODES
+    if (includeUppercase) charCodes = charCodes.concat 
+    (UPPERCASE_CHAR_CODES) 
+    if (includeNumbers) charCodes = charCodes.concat 
+    (NUMBER_CHAR_CODES) 
+    if (includeSymbols) charCodes = charCodes.concat 
+    (SYMBOL_CHAR_CODES) 
+    
+    const passwordCharacters = []
+    // iterate and append characters until you reach the length the user inputs
+    for (let i = 0; i < characterAmount; i++) {
+        if(this.item === undefined) {return}
+        const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+        passwordCharacters.push(String.fromCharCode(characterCode))
+    } 
+    // turns array into a string
+    return passwordCharacters.join("")
 }
 
 // Loop and append characters the length of user input into an empty array where our password will be stored
